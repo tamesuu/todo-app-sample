@@ -15,7 +15,7 @@ module Label
 
     # GET /items/new
     def new
-      @item = Item.new
+      @item = Label::Item.new
     end
 
     # GET /items/1/edit
@@ -26,13 +26,14 @@ module Label
     def create
       @item = Item.new(item_params)
 
-      if @item.save
-        redirect_to @item, notice: 'Item was successfully created.'
+      if Label::Item::Repository.save(@item)
+        redirect_to item_path(@item.id), notice: 'Item was successfully created.'
       else
         render :new
       end
     end
 
+    # TODO:
     # PATCH/PUT /items/1
     def update
       if @item.update(item_params)
@@ -42,6 +43,7 @@ module Label
       end
     end
 
+    # TODO
     # DELETE /items/1
     def destroy
       @item.destroy
@@ -51,12 +53,12 @@ module Label
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_item
-        @item = Item.find(params[:id])
+        @item = Item::Repository.fetch(id: params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
       def item_params
-        params.require(:item).permit(:name, :user_id)
+        params.permit(:name, :user_id)
       end
   end
 end
