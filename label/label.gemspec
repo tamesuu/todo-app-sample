@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Label::VERSION
   spec.authors     = ["tamesuu"]
   spec.email       = ["aganoyot@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Label."
-  spec.description = "TODO: Description of Label."
+  spec.homepage    = ""
+  spec.summary     = ": Summary of Label."
+  spec.description = ": Description of Label."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
