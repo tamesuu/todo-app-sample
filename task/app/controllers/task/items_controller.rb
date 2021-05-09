@@ -25,10 +25,11 @@ module Task
 
     # POST /items
     def create
-      @item = Item.new(item_params)
+      @item = Task::Item.new(item_params)
 
-      if @item.save
-        redirect_to @item, notice: 'Item was successfully created.'
+      ### if @item.save
+      if Task::Item::Repository.save(@item)
+        redirect_to item_path(@item.id), notice: 'Item was successfully created.'
       else
         render :new
       end
@@ -52,12 +53,12 @@ module Task
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_item
-        @item = Item.find(params[:id])
+        @item = Item::Repository.fetch(id: params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
       def item_params
-        params.require(:item).permit(:name, :status, :user_id)
+        params.permit(:name, :status, :user_id)
       end
   end
 end
