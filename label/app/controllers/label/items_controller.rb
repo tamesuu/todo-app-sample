@@ -6,7 +6,7 @@ module Label
 
     # GET /items
     def index
-      @items = Item.all
+      @items = Label::Item.fetchAll
     end
 
     # GET /items/1

@@ -5,6 +5,10 @@ module Label
       Model.find(id)
     end
 
+    def self.fetchAll
+      Model.all
+    end
+
     class Model < ApplicationRecord
       self.table_name = 'label_items'
     end
