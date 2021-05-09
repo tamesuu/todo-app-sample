@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Task::VERSION
   spec.authors     = ["tamesuu"]
   spec.email       = ["aganoyot@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Task."
-  spec.description = "TODO: Description of Task."
+  spec.homepage    = ""
+  spec.summary     = ": Summary of Task."
+  spec.description = ": Description of Task."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
