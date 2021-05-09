@@ -6,7 +6,8 @@ module Task
 
     # GET /items
     def index
-      @items = Task::Item::Repository.fetchAll
+      ### @items = Task::Item::Repository.fetchAll
+      @items = Task::DisplayList.call()
     end
 
     # GET /items/1

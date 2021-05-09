@@ -1,3 +1,13 @@
+# 別ファイルだと読み込まないので、ここに置く
+module Task
+  # 一覧を取得する
+  class DisplayList
+    def self.call
+      items = Task::Item::Repository.fetchAll
+    end
+  end
+end
+
 module Task
   module Item
     class Repository
