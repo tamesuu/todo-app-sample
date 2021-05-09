@@ -12,6 +12,8 @@ module Todo
     config.load_defaults 5.2
     config.autoload_paths += %W( #{config.root}/label/app/repositories )
     config.eager_load_paths += %W( #{config.root}/label/app/repositories )
+    config.autoload_paths += %W( #{config.root}/label/app/usecases )
+    config.eager_load_paths += %W( #{config.root}/label/app/usecases )
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
