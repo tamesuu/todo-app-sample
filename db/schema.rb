@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_091834) do
+ActiveRecord::Schema.define(version: 2021_05_09_230820) do
 
   create_table "label_items", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "task_items", force: :cascade do |t|
+    t.string "name"
+    t.integer "status"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
