@@ -6,8 +6,8 @@ module Task
 
     # GET /items
     def index
-      ### @items = Task::Item::Repository.fetchAll
-      @items = Task::DisplayList.call()
+      @items = Task::Item::Repository.fetchAll
+      ### @items = Task::DisplayList.call()
     end
 
     # GET /items/1
@@ -16,11 +16,15 @@ module Task
 
     # GET /items/new
     def new
-      @item = Item.new
+      # fetch label
+      @labels = Label::Item::Repository.fetchAll
+      ### Rails.logger.debug(@labels.inspect)
+      @item = Task::Item.new
     end
 
     # GET /items/1/edit
     def edit
+      @labels = Label::Item::Repository.fetchAll
     end
 
     # POST /items

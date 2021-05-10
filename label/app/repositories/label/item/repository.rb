@@ -8,6 +8,7 @@ module Label
       end
 
       def self.fetchAll
+        # 本当は該当ユーザーのラベルだけ取得する
         Model.all
       end
 

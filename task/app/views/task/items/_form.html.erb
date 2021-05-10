@@ -20,6 +20,10 @@
     Status:
     <%= form.number_field :status %>
   </div>
+  <div class="field">
+    Label:
+    <%= form.collection_select :label_ids, @labels, :id, :name, { include_blank: false }, { multiple: true } %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
